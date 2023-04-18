@@ -21,11 +21,11 @@ This program is used to verify Google's Sycamore quantum 18-cycle and 20-cycle c
 1. PyTorch, you could use the container: [nvidia pytorch:22.12-py3](http://nvcr.io/nvidia/pytorch:22.12-py3) or manually install it following the [offical guidance](https://pytorch.org/).
 2. cuTensor v1.6.1: [cuTENSOR Download Page](https://developer.nvidia.com/cutensor-archive)
 
-## Download path file
+## Download the path files
 
 Download the contraction path files for the 18-cycle and 20-cycle, and place them in the `data` directory.
-1. 18-cycle contraction path file: [Google Drive link](https://drive.google.com/file/d/1J1k9bwMo2X_lRhM3v2eOEFJpc8LmRvX-/view?usp=sharing), md5sum check: `14e82ef441f8fa799cb807b0b75b3591`
-2. 20-cycle contraction path file: [Google Drive link](https://drive.google.com/file/d/1izZySGP9INMwpzWkv7jM_3ZdKuF_FzTN/view?usp=sharing), md5sum check: `5870cdfeddd3026a5a6ba344c98dc294`
+1. 18-cycle: [Google Drive link](https://drive.google.com/file/d/1J1k9bwMo2X_lRhM3v2eOEFJpc8LmRvX-/view?usp=sharing), md5sum check: `14e82ef441f8fa799cb807b0b75b3591`
+2. 20-cycle: [Google Drive link](https://drive.google.com/file/d/1izZySGP9INMwpzWkv7jM_3ZdKuF_FzTN/view?usp=sharing), md5sum check: `5870cdfeddd3026a5a6ba344c98dc294`
 
 ## Install
 

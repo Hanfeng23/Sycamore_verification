@@ -45,12 +45,12 @@ fi
 
 if [ -z $1 ]; then
   echo "Running ${DEMO_FILE} ..."
-  python ${SYCAMORE_DEMO_HOME}/${DEMO_FILE} -get_time -task_num 5 ${BITSTRINGS} ${PATH_FILE}
+  python ${SYCAMORE_DEMO_HOME}/${DEMO_FILE} -get_time -start_task ${START_TASK} -task_num ${TASK_NUM} ${BITSTRINGS} ${PATH_FILE}
 elif [ "$1" = "-c" ]; then
   echo "Running ${DEMO_FILE}.py with checking mode..."
-  python ${SYCAMORE_DEMO_HOME}/${DEMO_FILE} -get_time -task_num 3 -check_results True ${BITSTRINGS} ${PATH_FILE}
+  python ${SYCAMORE_DEMO_HOME}/${DEMO_FILE} -get_time -start_task ${START_TASK} -task_num ${TASK_NUM} ${BITSTRINGS} ${PATH_FILE} -check_results True
 elif [ "$1" = "-t" ]; then
-  echo "Timing each kernels..."
+  echo "Timing each kernels before and after optimization ..."
   python ${SYCAMORE_DEMO_HOME}/${DEMO_FILE} -get_time ${BITSTRINGS} ${PATH_FILE} -task_num 1 -get_timing_kernels True -check_results True
 elif [ "$1" = "-i" ]; then
   install_cutensor_python
@@ -64,7 +64,7 @@ elif [ "$1" = "-mg" ]; then
   for i in 0 1 2 3 4 5 6 7; do
     echo "START_TASK = ${START_TASK}, TASK_NUM = ${TASK_NUM} on GPU $i"
     export CUDA_VISIBLE_DEVICES=$i
-    nohup python ${SYCAMORE_DEMO_HOME}/${DEMO_FILE} -get_time -start_task ${START_TASK} -task_num ${TASK_NUM} -cuda 0 >${SYCAMORE_DEMO_HOME}/log_taskid_${START_TASK}.txt 2>&1 &
+    nohup python ${SYCAMORE_DEMO_HOME}/${DEMO_FILE} -get_time -start_task ${START_TASK} -task_num ${TASK_NUM} ${BITSTRINGS} -cuda 0 >${SYCAMORE_DEMO_HOME}/log_taskid_${START_TASK}.txt 2>&1 &
     START_TASK=$(expr ${START_TASK} + ${TASK_NUM})
   done
 fi
