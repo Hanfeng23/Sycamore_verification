@@ -18,7 +18,7 @@ This program is used to verify Google's Sycamore quantum 18-cycle and 20-cycle c
 
 ## Dependencies
 
-1. PyTorch container: [nvidia pytorch:22.12-py3](http://nvcr.io/nvidia/pytorch:22.12-py3)
+1. PyTorch, you could use the container: [nvidia pytorch:22.12-py3](http://nvcr.io/nvidia/pytorch:22.12-py3) or manually install it following the [offical guidance](https://pytorch.org/).
 2. cuTensor v1.6.1: [cuTENSOR Download Page](https://developer.nvidia.com/cutensor-archive)
 
 ## Download path file
